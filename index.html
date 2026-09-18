@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>蓼科＆諏訪湖 2泊3日 旅のしおり</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        /* プランA（秋の紅葉・晴天テーマ） */
+        --primary: #7d3c98;
+        --main: #8d422b;
+        --sub: #4a6050;
+        --accent: #c68b59;
+        --bg: #f5f2eb;
+        --card-bg: #ffffff;
+        --text-main: #2c2623;
+        --text-sub: #6e655f;
+        --border: #e5dfc5;
+        --tag-bg: #f0eae1;
+      }
+
+      body.theme-rain {
+        /* プランB（雨の日・穏やかな寒色テーマ） */
+        --main: #5c7a89;
+        --sub: #7a95a2;
+        --accent: #a3b8c2;
+        --bg: #f0f4f7;
+        --card-bg: #ffffff;
+        --text-main: #2c3539;
+        --text-sub: #637078;
+        --border: #dce4e8;
+        --tag-bg: #e8eef2;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Noto Sans JP", sans-serif;
+        background-color: var(--bg);
+        color: var(--text-main);
+        line-height: 1.6;
+        transition:
+          background-color 0.4s ease,
+          color 0.4s ease;
+      }
+
+      a {
+        color: var(--main);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        opacity: 0.85;
+      }
+
+      header {
+        background-color: var(--main);
+        color: #ffffff;
+        padding: 28px 20px 22px;
+        text-align: center;
+        border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: background-color 0.4s ease;
+      }
+
+      header h1 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        margin-bottom: 6px;
+      }
+
+      header p {
+        font-size: 0.85rem;
+        opacity: 0.9;
+        font-weight: 500;
+      }
+
+      .header-badge {
+        display: none;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        margin-bottom: 8px;
+        display: inline-block;
+      }
+
+      footer {
+        background-color: var(--main);
+        color: #ffffff;
+        padding: 24px 20px 40px;
+        text-align: center;
+        border-top: 3px solid rgba(0, 0, 0, 0.15);
+        margin-top: 30px;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+        transition: background-color 0.4s ease;
+      }
+
+      footer p {
+        font-size: 0.85rem;
+        opacity: 0.9;
+        font-weight: 500;
+      }
+
+      footer .sub-text {
+        font-size: 0.75rem;
+        opacity: 0.75;
+        margin-top: 4px;
+      }
+
+      .container {
+        max-width: 540px;
+        margin: 0 auto;
+        padding: 16px 12px;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 18px;
+        margin-bottom: 18px;
+        border: 1px solid var(--border);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        transition: border-color 0.4s ease;
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 14px;
+        padding-bottom: 8px;
+        border-bottom: 1.5px solid var(--bg);
+        transition: border-color 0.4s ease;
+      }
+
+      .card-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--main);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.4s ease;
+      }
+
+      .day-badge {
+        background: var(--sub);
+        color: #ffffff;
+        font-size: 0.75rem;
+        font-weight: 500;
+        padding: 3px 9px;
+        border-radius: 6px;
+        transition: background-color 0.4s ease;
+      }
+
+      .timeline {
+        position: relative;
+        padding-left: 16px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 3px;
+        top: 6px;
+        bottom: 6px;
+        width: 2px;
+        background: var(--border);
+        transition: background-color 0.4s ease;
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 16px;
+      }
+
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -16px;
+        top: 7px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--main);
+        transition: background-color 0.4s ease;
+      }
+
+      .time-badge {
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--sub);
+        display: inline-block;
+        margin-bottom: 2px;
+        transition: color 0.4s ease;
+      }
+
+      .spot-name {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--text-main);
+        margin: 1px 0;
+      }
+
+      .spot-desc {
+        font-size: 0.83rem;
+        color: var(--text-sub);
+      }
+
+      .food-tag {
+        background: var(--tag-bg);
+        color: var(--main);
+        font-size: 0.73rem;
+        font-weight: 500;
+        padding: 2px 7px;
+        border-radius: 4px;
+        border: 1px solid var(--border);
+        margin-top: 4px;
+        display: inline-block;
+        transition: all 0.4s ease;
+      }
+
+      .reserve-badge {
+        background: var(--tag-bg);
+        color: var(--main);
+        font-size: 0.72rem;
+        font-weight: 500;
+        padding: 1px 6px;
+        border-radius: 4px;
+        margin-left: 6px;
+        display: inline-block;
+        vertical-align: middle;
+        border: 1px solid var(--border);
+        transition: all 0.4s ease;
+      }
+
+      .tip-box {
+        background: var(--tag-bg);
+        border-left: 3px solid var(--main);
+        padding: 10px 12px;
+        font-size: 0.82rem;
+        margin-top: 12px;
+        color: var(--text-main);
+        line-height: 1.5;
+        border-radius: 0 6px 6px 0;
+        transition: all 0.4s ease;
+      }
+
+      .checklist {
+        list-style: none;
+      }
+
+      .checklist li {
+        font-size: 0.85rem;
+        padding: 7px 0;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        transition: border-color 0.4s ease;
+      }
+
+      .checklist li:last-child {
+        border-bottom: none;
+      }
+
+      .checklist input[type="checkbox"] {
+        margin-right: 10px;
+        accent-color: var(--main);
+        width: 17px;
+        height: 17px;
+        transition: accent-color 0.4s ease;
+      }
+
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.85rem;
+        transition: border-color 0.4s ease;
+      }
+
+      .info-row:last-child {
+        border-bottom: none;
+      }
+
+      .info-label {
+        color: var(--text-sub);
+      }
+
+      .info-val {
+        font-weight: 500;
+        text-align: right;
+      }
+
+      /* フローティングボタン */
+      #toggle-btn-container {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        transition:
+          opacity 0.3s ease,
+          pointer-events 0.3s ease;
+      }
+
+      #toggle-btn {
+        background: #ffffff;
+        color: var(--text-main);
+        border: 2px solid var(--main);
+        padding: 12px 24px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        font-family: inherit;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+      }
+
+      #toggle-btn:hover {
+        background: var(--bg);
+      }
+
+      body.theme-rain #toggle-btn {
+        background: var(--main);
+        color: #ffffff;
+        border-color: var(--main);
+      }
+
+      body.theme-rain #toggle-btn:hover {
+        opacity: 0.9;
+      }
+
+      #plan-b {
+        display: none;
+      }
+
+      .fade-in {
+        animation: fadeIn 0.5s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span class="header-badge" id="header-badge">🍂 通常プラン</span>
+      <h1>蓼科高原・諏訪湖<br />2泊3日 旅のしおり</h1>
+      <p>2026.09.20 (日) 〜 09.22 (火)</p>
+    </header>
+
+    <div class="container">
+      <!-- ===============================
+           プランA（通常・晴天プラン）
+      ================================ -->
+      <div id="plan-a" class="fade-in">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">基本メモ</div>
+          </div>
+          <div class="info-row">
+            <span class="info-label">宿泊</span>
+            <span class="info-val">
+              <a
+                href="https://relohotels.com/list_of_hotels/pvtateshina/"
+                target="_blank"
+                rel="noopener"
+                >ポイントバケーション蓼科高原</a
+              >
+            </span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">移動</span>
+            <span class="info-val">タイムズカーシェア（黄金駅発着）</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">返却予定</span>
+            <span class="info-val">20:00 黄金駅返却</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">気候注意</span>
+            <span class="info-val">標高が高く肌寒いため上着必携</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">持ち物チェック</div>
+          </div>
+          <ul class="checklist">
+            <li><input type="checkbox" /> スマホ充電器・モバイルバッテリー</li>
+            <li>
+              <input type="checkbox" /> ウインドブレーカー /
+              薄手ダウンジャケット
+            </li>
+            <li><input type="checkbox" /> 脱ぎ着しやすい上着（フリース等）</li>
+            <li><input type="checkbox" /> 歩きやすいスニーカー</li>
+            <li><input type="checkbox" /> 温泉用タオル・着替えセット</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">1日目：諏訪湖うなぎと温泉</div>
+            <span class="day-badge">9/20 (日)</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="time-badge">08:30</span>
+              <div class="spot-name">名古屋（黄金駅付近）出発</div>
+              <div class="spot-desc">中央自動車道経由で諏訪ICへドライブ。</div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">11:30</span>
+              <div class="spot-name">
+                昼食：<a
+                  href="https://www.kamisuwa-unagikobayashi.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >うなぎ 小林</a
+                >（または
+                <a href="https://kankohso.co.jp/" target="_blank" rel="noopener"
+                  >観光荘</a
+                ><span class="reserve-badge">事前予約推奨</span>）
+              </div>
+              <div class="spot-desc">諏訪湖名物のうなぎを堪能。</div>
+              <span class="food-tag">名物：うな重</span>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">13:30</span>
+              <div class="spot-name">
+                <a
+                  href="http://www.katakurakan.or.jp/"
+                  target="_blank"
+                  rel="noopener"
+                  >片倉館（千人風呂）</a
+                >
+              </div>
+              <div class="spot-desc">
+                昭和初期の洋風建築で立位浴温泉を体感。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">15:30</span>
+              <div class="spot-name">
+                <a
+                  href="https://suwataisha.or.jp/about/miyamori/kamishahonmiya/"
+                  target="_blank"
+                  rel="noopener"
+                  >諏訪大社 上社本宮</a
+                >
+              </div>
+              <div class="spot-desc">荘厳な空気漂う神社を散策。</div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">17:00</span>
+              <div class="spot-name">
+                買い出し：<a
+                  href="https://www.tsuruya-corp.co.jp/store/chino/"
+                  target="_blank"
+                  rel="noopener"
+                  >スーパー ツルヤ茅野店</a
+                >
+              </div>
+              <div class="spot-desc">
+                地ビール、ワイン、お惣菜、おつまみを調達。
+              </div>
+              <span class="food-tag">夕食調達</span>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">18:00</span>
+              <div class="spot-name">
+                <a
+                  href="https://relohotels.com/list_of_hotels/pvtateshina/"
+                  target="_blank"
+                  rel="noopener"
+                  >ポイントバケーション蓼科高原</a
+                >
+              </div>
+              <div class="spot-desc">
+                チェックイン。お部屋で買い込んだグルメを楽しむ。
+              </div>
+            </div>
+          </div>
+          <div class="tip-box">
+            食事メモ：「<a
+              href="https://www.tsuruya-corp.co.jp/store/chino/"
+              target="_blank"
+              rel="noopener"
+              >ツルヤ</a
+            >」で買い込んで部屋食か、外食なら「<a
+              href="https://www.lcv.ne.jp/~ilporto/"
+              target="_blank"
+              rel="noopener"
+              >リストランテ イルポルト</a
+            >」。
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">2日目：蓼科高原の絶景巡り</div>
+            <span class="day-badge">9/21 (月)</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="time-badge">09:30</span>
+              <div class="spot-name">
+                <a
+                  href="https://tateshina.ne.jp/spot/guide_13.html"
+                  target="_blank"
+                  rel="noopener"
+                  >御射鹿池（みしゃかいけ）</a
+                >
+              </div>
+              <div class="spot-desc">静寂な水面と森が描く神秘的な景観。</div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">11:00</span>
+              <div class="spot-name">
+                <a
+                  href="https://www.kitayatu.jp/"
+                  target="_blank"
+                  rel="noopener"
+                  >北八ヶ岳ロープウェイ</a
+                >
+              </div>
+              <div class="spot-desc">標高2,237mの坪庭を散策。</div>
+              <div class="spot-desc" style="color: #b83b26; font-size: 0.8rem">
+                ※山頂は冷え込むため防寒着必須
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">13:00</span>
+              <div class="spot-name">
+                昼食：<a
+                  href="https://www.google.com/maps/search/?api=1&query=%E6%89%8B%E6%89%93%E3%81%A1%E7%AF%8D%E8%8F%B1+%E3%81%BF%E3%81%A4%E8%94%B2"
+                  target="_blank"
+                  rel="noopener"
+                  >手打ち蕎麦 みつ蔵</a
+                >
+              </div>
+              <div class="spot-desc">細打ちのお蕎麦と鴨の陶板焼きが名物。</div>
+              <span class="food-tag">名物：せいろ蕎麦＆鴨陶板焼き</span>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">15:00</span>
+              <div class="spot-name">
+                <a
+                  href="https://www.venus-line.net/"
+                  target="_blank"
+                  rel="noopener"
+                  >ビーナスライン</a
+                >〜<a
+                  href="https://koro-kirigamine.hardrain.rocks/index.html"
+                  target="_blank"
+                  rel="noopener"
+                  >コロボックルヒュッテ</a
+                >
+              </div>
+              <div class="spot-desc">
+                車山高原のドライブとヒュッテでの温かいボルシチ。
+              </div>
+              <span class="food-tag">名物：ボルシチ＆カフェ</span>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">17:30</span>
+              <div class="spot-name">
+                夕食：<a
+                  href="https://tateshina-base.jp/"
+                  target="_blank"
+                  rel="noopener"
+                  >蓼科BASE</a
+                >（テイクアウト等）
+              </div>
+              <div class="spot-desc">
+                湖畔の施設でピザやバーガーをテイクアウト。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">3日目：ガラス工芸とパノラマ</div>
+            <span class="day-badge">9/22 (火)</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="time-badge">10:00</span>
+              <div class="spot-name">
+                <a
+                  href="https://www.garasunosato.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >SUWAガラスの里</a
+                >・<a
+                  href="https://www.clasuwa.jp/"
+                  target="_blank"
+                  rel="noopener"
+                  >くらすわ</a
+                >
+              </div>
+              <div class="spot-desc">
+                ガラス工芸見学と湖畔ショップでのお買い物。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">12:30</span>
+              <div class="spot-name">
+                昼食：<a
+                  href="https://yuyashirosoba.wixsite.com/mysite-1"
+                  target="_blank"
+                  rel="noopener"
+                  >そばきり 道玄</a
+                ><span class="reserve-badge">事前予約推奨</span>
+              </div>
+              <div class="spot-desc">風味豊かな十割どうづきそばを堪能。</div>
+              <span class="food-tag">名物：十割どうづきそば</span>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">14:30</span>
+              <div class="spot-name">
+                <a
+                  href="https://www.city.suwa.lg.jp/soshiki/21/1281.html"
+                  target="_blank"
+                  rel="noopener"
+                  >立石公園</a
+                >
+              </div>
+              <div class="spot-desc">
+                諏訪湖が一望できる高台の展望スポット。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">16:00</span>
+              <div class="spot-name">諏訪IC → 名古屋（黄金駅）へ</div>
+              <div class="spot-desc">
+                サービスエリアに寄りつつ安全運転で帰路へ。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">20:00</span>
+              <div class="spot-name">黄金駅着・カーシェア返却</div>
+              <div class="spot-desc">返却手続き完了（20:00固定）。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===============================
+           プランB（台風・雨天プラン）
+      ================================ -->
+      <div id="plan-b">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">基本メモ (雨天プラン)</div>
+          </div>
+          <div class="info-row">
+            <span class="info-label">方針</span>
+            <span class="info-val">完全屋内施設とゆったりおこもり</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">宿泊</span>
+            <span class="info-val">
+              <a
+                href="https://relohotels.com/list_of_hotels/pvtateshina/"
+                target="_blank"
+                rel="noopener"
+                >ポイントバケーション蓼科高原</a
+              >
+            </span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">移動</span>
+            <span class="info-val">タイムズカーシェア（黄金駅発着）</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">返却予定</span>
+            <span class="info-val">20:00 黄金駅返却</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">持ち物チェック</div>
+          </div>
+          <ul class="checklist">
+            <li><input type="checkbox" /> 丈夫な傘 / レインコート</li>
+            <li><input type="checkbox" /> 濡れた靴や服を拭くタオル多め</li>
+            <li><input type="checkbox" /> 替えの靴下・スニーカー</li>
+            <li><input type="checkbox" /> お部屋で楽しむ映画などの暇つぶし</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">1日目：諏訪湖畔の屋内観光</div>
+            <span class="day-badge">9/20 (日)</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="time-badge">08:30</span>
+              <div class="spot-name">名古屋（黄金駅付近）出発</div>
+              <div class="spot-desc">雨天の高速道路。焦らず安全運転で。</div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">11:30</span>
+              <div class="spot-name">
+                昼食：<a
+                  href="https://www.kamisuwa-unagikobayashi.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >うなぎ 小林</a
+                >（または
+                <a href="https://kankohso.co.jp/" target="_blank" rel="noopener"
+                  >観光荘</a
+                ><span class="reserve-badge">事前予約推奨</span>）
+              </div>
+              <div class="spot-desc">諏訪湖名物のうなぎでスタミナ補給。</div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">13:30</span>
+              <div class="spot-name">
+                <a
+                  href="http://www.katakurakan.or.jp/"
+                  target="_blank"
+                  rel="noopener"
+                  >片倉館（千人風呂）</a
+                >
+              </div>
+              <div class="spot-desc">
+                雨に濡れずに楽しめる洋風レトロ建築の深い温泉。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">15:30</span>
+              <div class="spot-name">
+                <a
+                  href="https://kitazawamuseum.co.jp/"
+                  target="_blank"
+                  rel="noopener"
+                  >北澤美術館</a
+                >
+                または 諏訪湖畔カフェ
+              </div>
+              <div class="spot-desc">
+                エミール・ガレなどの美しいガラス工芸を静かな屋内で鑑賞。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">17:00</span>
+              <div class="spot-name">
+                買い出し：<a
+                  href="https://www.tsuruya-corp.co.jp/store/chino/"
+                  target="_blank"
+                  rel="noopener"
+                  >スーパー ツルヤ茅野店</a
+                >
+              </div>
+              <div class="spot-desc">
+                悪天候に備え、夜〜翌朝の食料やお酒をたっぷり買い込む。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">18:00</span>
+              <div class="spot-name">
+                <a
+                  href="https://relohotels.com/list_of_hotels/pvtateshina/"
+                  target="_blank"
+                  rel="noopener"
+                  >ポイントバケーション蓼科高原</a
+                >
+              </div>
+              <div class="spot-desc">
+                チェックイン。雨音を聞きながらお部屋でゆったりディナー。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">2日目：白樺湖アートとおこもり</div>
+            <span class="day-badge">9/21 (月)</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="time-badge">10:30</span>
+              <div class="spot-name">
+                <a href="https://1027.jp/" target="_blank" rel="noopener"
+                  >蓼科テディベア美術館</a
+                >
+              </div>
+              <div class="spot-desc">
+                荒天でも安心な完全屋内施設。世界中のテディベアに癒される。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">12:30</span>
+              <div class="spot-name">
+                昼食：<a
+                  href="https://www.google.com/maps/search/?api=1&query=%E6%89%8B%E6%89%93%E3%81%A1%E7%AF%8D%E8%8F%B1+%E3%81%BF%E3%81%A4%E8%94%B2"
+                  target="_blank"
+                  rel="noopener"
+                  >手打ち蕎麦 みつ蔵</a
+                >
+              </div>
+              <div class="spot-desc">
+                鴨の陶板焼きとお蕎麦。※雨での外待機が厳しい場合は近隣店舗へ。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">14:30</span>
+              <div class="spot-name">
+                <a
+                  href="https://hotel.ikenotaira-resort.co.jp/art/"
+                  target="_blank"
+                  rel="noopener"
+                  >世界の影絵・きり絵・ガラス・オルゴール美術館</a
+                >
+              </div>
+              <div class="spot-desc">
+                白樺湖畔の幻想的な屋内アート空間を満喫。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">16:30</span>
+              <div class="spot-name">
+                夕食：<a
+                  href="https://tateshina-base.jp/"
+                  target="_blank"
+                  rel="noopener"
+                  >蓼科BASE</a
+                >（テイクアウト）
+              </div>
+              <div class="spot-desc">
+                早めに宿に戻るため、ピザや惣菜をサクッとテイクアウト。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">17:30</span>
+              <div class="spot-name">宿でまったり・おこもりタイム</div>
+              <div class="spot-desc">
+                温泉にゆっくり浸かり、買ってきたご飯と映画で贅沢なインドアの夜。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">3日目：屋内ショッピングと帰路</div>
+            <span class="day-badge">9/22 (火)</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="time-badge">10:00</span>
+              <div class="spot-name">
+                <a
+                  href="https://www.garasunosato.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >SUWAガラスの里</a
+                >・<a
+                  href="https://www.clasuwa.jp/"
+                  target="_blank"
+                  rel="noopener"
+                  >くらすわ</a
+                >
+              </div>
+              <div class="spot-desc">
+                ガラス工芸や信州のお土産を屋内でまとめてお買い物。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">12:30</span>
+              <div class="spot-name">
+                昼食：<a
+                  href="https://yuyashirosoba.wixsite.com/mysite-1"
+                  target="_blank"
+                  rel="noopener"
+                  >そばきり 道玄</a
+                ><span class="reserve-badge">事前予約推奨</span>
+              </div>
+              <div class="spot-desc">風味豊かな十割どうづきそばを堪能。</div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">14:00</span>
+              <div class="spot-name">
+                <a
+                  href="https://www.takeya-miso.co.jp/misokaikan/"
+                  target="_blank"
+                  rel="noopener"
+                  >タケヤ味噌会館</a
+                >
+                または 五蔵めぐりショップ
+              </div>
+              <div class="spot-desc">
+                雨天の景色（立石公園）を避け、屋内で味噌スイーツや日本酒探し。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">16:00</span>
+              <div class="spot-name">諏訪IC → 名古屋（黄金駅）へ</div>
+              <div class="spot-desc">
+                台風の天候・渋滞状況に注意しながら安全第一で帰路へ。
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">20:00</span>
+              <div class="spot-name">黄金駅着・カーシェア返却</div>
+              <div class="spot-desc">
+                無事到着！返却手続き完了（20:00固定）。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>蓼科高原・諏訪湖 2泊3日 旅のしおり</p>
+      <p class="sub-text">Have a safe and wonderful trip! 🍂</p>
+    </footer>
+
+    <!-- 下部追従トグルボタン -->
+    <div id="toggle-btn-container">
+      <button id="toggle-btn">
+        <span style="font-size: 1.1rem">☔</span> 台風25号考慮プラン
+      </button>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleBtnContainer = document.getElementById(
+          "toggle-btn-container",
+        );
+        const toggleBtn = document.getElementById("toggle-btn");
+        const footer = document.querySelector("footer");
+        const planA = document.getElementById("plan-a");
+        const planB = document.getElementById("plan-b");
+        const body = document.body;
+        const headerBadge = document.getElementById("header-badge");
+
+        // フッターが見えたらボタンをフェードアウト
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                toggleBtnContainer.style.opacity = "0";
+                toggleBtnContainer.style.pointerEvents = "none";
+              } else {
+                toggleBtnContainer.style.opacity = "1";
+                toggleBtnContainer.style.pointerEvents = "auto";
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+        observer.observe(footer);
+
+        // プラン切り替え
+        let isPlanB = false;
+        toggleBtn.addEventListener("click", () => {
+          isPlanB = !isPlanB;
+
+          if (isPlanB) {
+            // プランBへ
+            planA.style.display = "none";
+            planA.classList.remove("fade-in");
+
+            planB.style.display = "block";
+            planB.classList.add("fade-in");
+
+            body.classList.add("theme-rain");
+            toggleBtn.innerHTML =
+              '<span style="font-size:1.1rem;">🍂</span> 通常プランに戻す';
+            headerBadge.innerText = "☔ 雨天プラン";
+          } else {
+            // プランAへ
+            planB.style.display = "none";
+            planB.classList.remove("fade-in");
+
+            planA.style.display = "block";
+            planA.classList.add("fade-in");
+
+            body.classList.remove("theme-rain");
+            toggleBtn.innerHTML =
+              '<span style="font-size:1.1rem;">☔</span> 台風25号考慮プラン';
+            headerBadge.innerText = "🍂 通常プラン";
+          }
+
+          // 切り替え時に少し上部へスクロールしてリセット
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    </script>
+  </body>
+</html>
